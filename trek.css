@@ -1,0 +1,504 @@
+BODY {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to bottom, #202020 0%, #202020 67%);
+  /*background-image: url(bg.plates.png);*/
+  margin: 0;
+}
+
+#carte {
+  display: block;
+  position: relative;
+  top: .2vw;
+  right: .1vw;
+  width: 66vw;
+  height: auto;
+  max-width: 95vh;
+  max-height: 95vh;
+  margin: 0 0 0 auto;
+  line-height: 0;
+  box-shadow: 0 0 3vw black;
+}
+
+#grid {
+  display: block;
+  transform-box: fill-box;
+  border: .1vw solid gray;
+  border-radius: .5vw;
+}
+
+#hex {
+  fill: transparent;
+  stroke: rgba(240, 240, 255, .1);
+}
+
+#pane,
+#face,
+#notice {
+  position: relative;
+  clear: left;
+  left: .1vw;
+  float: left;
+  height: auto;
+  max-height: 95vh;
+  width: 32vw;
+  box-sizing: border-box;
+  font-family: Tahoma, Helvetica, Arial, sans-serif;
+  letter-spacing: .125vw;
+  font-weight: bold;
+  font-size: 1vw;
+  color: white;
+  text-transform: capitalize;
+  text-shadow:
+   -.1vw -.1vw 0 black,  
+    .1vw -.1vw 0 black,
+   -.1vw .1vw 0 black,
+    .1vw .1vw 0 black;
+}
+
+#face {
+  margin: .75vw 0 .5vw 0;
+  background: linear-gradient(to bottom, white 0%, #dddddd 100%);
+  border-radius: .5vw;
+}
+
+#notice {
+  margin-top: .25vw;
+  margin-bottom: .75vw;
+  height: 3.5vw !important;
+  font-size: 1.125vw !important;
+  padding-top: 1vw !important;
+  background: radial-gradient(gray, black);
+  border-radius: 0 !important;
+  border-width: .2vw 0 !important;
+  color: gray;
+  box-shadow: 0 0 3vw black;
+  display: inline-block;
+  text-align: center;
+  float: left;
+  border: .1vw solid gray;
+  text-transform: uppercase;
+}
+
+#instruments {
+  position: relative;
+  clear: left;
+  float: left;
+  height: auto;
+  width: 32vw;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+#instruments BUTTON {
+  display: none;
+  height: 2.5vw;
+  width: 50%;
+  padding-top: .3vw;
+  margin: .5vw .2vw;
+  font-family: Tahoma, Helvetica, Arial, sans-serif;
+  letter-spacing: .125vw;
+  font-size: 1.125vw;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  text-shadow:
+   -.1vw -.1vw 0 black,  
+    .1vw -.1vw 0 black,
+   -.1vw .1vw 0 black,
+    .1vw .1vw 0 black;
+  box-shadow: 0 0 3vw black;
+  border: .2vw solid gray;
+  border-radius: .5vw;
+  background: radial-gradient(silver, black);
+  outline: none;
+  cursor: pointer;
+}
+
+#instruments BUTTON:focus {
+  color: white !important;
+  background: radial-gradient(black, #404040) !important;
+}
+
+#notice.deploy,
+#instruments BUTTON.next,
+#instruments BUTTON.prev,
+#instruments BUTTON.add,
+#instruments BUTTON.ready {
+  background: radial-gradient(#009973, black);
+  color: #33ffcc;
+  border-color: #00b386;
+}
+
+#instruments BUTTON.next,
+#instruments BUTTON.prev {
+  position: relative;
+  width: 3em;
+  z-index: 1;
+}
+
+#instruments BUTTON.add {
+  position: relative;
+  z-index: 0;
+}
+
+#instruments BUTTON.ready {
+  background: radial-gradient(#00ffbf, black);
+  color: black;
+  text-shadow: none;
+}
+
+#notice.move,
+#instruments BUTTON.move {
+  background: radial-gradient(#0066cc, black);
+  color: #a0d0ff;
+  border-color: #0066cc;
+}
+
+#notice.fire,
+#instruments BUTTON.fire{
+  background: radial-gradient(#cc004d, black);
+  color: #ff80ac;
+  border-color: #cc004d;
+}
+
+#inst ruments BUTTON {
+  color: white !important;
+}
+
+.panel DIV,
+.facia DIV,
+#notice {
+  display: inline-block;
+  position: relative;
+  float: left;
+  box-sizing: border-box;
+  height: 2vw;
+}
+
+.panel > BUTTON,
+.panel .cluster {
+  margin-top: .75vw;
+  box-shadow: 0 0 3vw black;
+}
+
+.panel .cluster {
+  width: 50%;
+  height: 6vw;
+}
+
+.panel .cluster BUTTON {
+  width: 100%;
+}
+.panel .cluster:nth-of-type(even) BUTTON {
+  border-radius: .5vw 0 0 .5vw !important;
+}
+.panel .cluster:nth-of-type(odd) BUTTON {
+  border-radius: 0 .5vw .5vw 0 !important;
+}
+
+.panel BUTTON {   
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  padding: 0;
+  float: left;
+  height: 2vw;
+  box-sizing: border-box;
+  font-family: Tahoma, Helvetica, Arial, sans-serif;
+  letter-spacing: .125vw;
+  font-weight: bold;
+  font-size: 1vw;
+  color: white;
+  text-align: left;
+  text-transform: capitalize;
+  text-decoration: none;
+  text-shadow:
+   -.1vw -.1vw 0 black,  
+    .1vw -.1vw 0 black,
+   -.1vw .1vw 0 black,
+    .1vw .1vw 0 black;
+  border: .1vw solid gray;
+  border-radius: .5vw;
+  background: black;
+  outline: none;
+  cursor: pointer;
+}
+
+.panel BUTTON SPAN {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  float: left;
+  top: .3vw;
+  left: 0;
+  z-index: 1;
+  padding-left: 1vw;
+}
+
+.panel BUTTON SPAN > B {
+  display: block;
+  float: right;
+  padding-left: .25vw;
+  padding-right: .25vw;
+  margin-right: 1.5vw;
+  color: black;
+  background-color: rgba(255, 255, 255, .33);
+  text-shadow: none;
+  cursor: help;
+}
+
+.panel {
+  display: none;
+}
+
+.panel#active {
+  display: block;
+}
+
+#pane .panel BUTTON > .empty {
+  width: 100%;
+  background: radial-gradient(rgba(128, 128, 128, 1), rgba(128, 128, 128, .33));
+  cursor: default;
+}
+
+#pane .panel BUTTON.empty:focus {
+  border-color: gray;
+  z-index: 0;
+}
+
+.sys-shields DIV {
+  background: radial-gradient(rgba(108, 84, 255, 1), rgba(108, 84, 255, .1));
+}
+
+.sys-hull DIV {
+  background: radial-gradient(rgba(0, 128, 255, 1), rgba(0, 128, 255, .1));
+}
+
+.sys-deflectors DIV,
+.sys-sensors DIV,
+.sys-control DIV {
+  background: radial-gradient(rgba(0, 192, 192, 1), rgba(0, 192, 192, .1));
+}
+
+.sys-impulse DIV,
+.sys-secondary DIV,
+.sys-primary DIV {
+  background: radial-gradient(rgba(168, 200, 0, 1), rgba(168, 200, 0, .1));
+}
+
+.sys-science DIV,
+.sys-navigation DIV,
+.sys-helm DIV,
+.sys-tactical DIV,
+.sys-engineering DIV,
+.sys-command DIV {
+  background: radial-gradient(rgba(255, 192, 0, 1), rgba(255, 192, 0, .1));
+}
+
+.sys-warp DIV {
+  background: radial-gradient(rgba(240, 84, 0, 1), rgba(240, 84, 0, .1));
+}
+
+.panel BUTTON:focus {
+  z-index: 1;
+}
+
+.sys-shields:focus,
+.facia .breakdown.shields {
+  border-color: rgba(200, 191, 255, 1);
+}
+
+.sys-hull:focus,
+.facia .breakdown.hull {
+  border-color: rgba(128, 192, 255, 1);
+}
+
+.sys-deflectors:focus,
+.sys-sensors:focus,
+.sys-control:focus,
+.facia .breakdown.deflectors,
+.facia .breakdown.sensors,
+.facia .breakdown.control {
+  border-color: rgba(0, 255, 255, 1);
+}
+
+.sys-impulse:focus,
+.sys-secondary:focus,
+.sys-primary:focus,
+.facia .breakdown.impulse,
+.facia .breakdown.secondary,
+.facia .breakdown.primary {
+  border-color: rgba(212, 255, 0, 1);
+}
+
+.sys-science:focus,
+.sys-navigation:focus,
+.sys-helm:focus,
+.sys-tactical:focus,
+.sys-engineering:focus,
+.sys-command:focus,
+.facia .breakdown.science,
+.facia .breakdown.navigation,
+.facia .breakdown.helm,
+.facia .breakdown.tactical,
+.facia .breakdown.engineering,
+.facia .breakdown.command {
+  border-color: rgba(255, 207, 64, 1);
+}
+
+.sys-warp:focus,
+.facia .breakdown.warp {
+  border-color: rgba(255, 172, 128, 1);
+}
+
+.panel .brief,
+.facia .brief {
+  height: 8vw;
+  width: 100%;
+  border: .1vw solid gray;
+  border-radius: .5vw;
+  background: radial-gradient(#606060, #404040);
+  color: #d0d0d0;
+  box-shadow: 0 0 3vw black;
+}
+
+.panel .brief DIV:first-of-type,
+.facia .brief DIV:first-of-type {
+  margin-top: 1vw;
+}
+
+.panel .brief DIV,
+.facia .brief DIV {
+  clear: left;
+  margin-left: 1vw;
+  height: 1.5vw;
+}
+
+.panel .brief .image,
+.facia .brief .image {
+  position: absolute;
+  right: .1vw;
+  width: 33%;
+  height: 99%;
+  margin: .25% 0;
+  background: radial-gradient(black 50%, #003366);
+  border-radius: .5vw;
+}
+
+.facia .brief .image {
+  background: radial-gradient(black 50%, #4c001d);
+  margin: 0;
+}
+
+.panel .brief B,
+.facia .brief B {
+  color: white;
+}
+
+.facia .brief.breakdown {
+  height: auto;
+  padding-bottom: .75vw;
+}
+
+.highlight {
+  color: black !important;
+  text-shadow:
+   -.1vw -.1vw 0 #eeff00,  
+    .1vw -.1vw 0 #eeff00,
+   -.1vw .1vw 0 #eeff00,
+    .1vw .1vw 0 #eeff00 !important;
+}
+
+.ship {
+  cursor: crosshair;
+}
+
+.zone {
+  cursor: alias;
+}
+
+.zoneReduced {
+  stroke: purple;
+}
+
+.fedHigh {
+  fill: #e0e0e0;
+  stroke: #e0e0e0;
+}
+
+.fedLow {
+  fill: #b0b0b0;
+  stroke: #b0b0b0;
+}
+
+.fedEngine {
+  fill: #ff3300;
+}
+
+.fedDishEdge {
+  stop-color: #e0e0e0;
+}
+
+.fedDishMid {
+  stop-color: #999999;
+}
+
+.terHigh {
+  fill: #b0b0c0;
+  stroke: #b0b0c0;
+}
+
+.terLow {
+  fill: #9090a0;
+  stroke: #9090a0;
+}
+
+.terEngine {
+  fill: #ff3300;
+}
+
+.terDishEdge {
+  stop-color: #b0b0c0;
+}
+
+.terDishMid {
+  stop-color: #666666;
+}
+
+.klingHigh {
+  fill: #a0b8d0;
+  stroke: #a0b0d0;
+}
+
+.klingLow {
+  fill: #7890a8;
+  stroke: #7888a8;
+}
+
+.grid {
+  stroke: rgba(255, 255, 255, .0);
+}
+
+.neb {
+  opacity: .15;
+}
+
+.nebStop0 {
+  stop-color: #6699ff;
+}
+
+.nebStop1 {
+  stop-opacity: 0;
+}
+
+#test BUTTON { /* remove */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: .5em;
+  font-size: 2vw;
+  background: black;
+  color: #404040;
+  border: 1px solid #404040;
+}
